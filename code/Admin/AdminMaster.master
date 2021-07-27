@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="Admin_AdminMaster" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 95%;
+        }
+        .style2
+        {
+            height: 23px;
+        }
+        .style3
+        {
+            font-size: xx-large;
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 346px;
+            height: 31px;
+        }
+        .style4
+        {
+            height: 22px;
+        }
+    </style>
+</head>
+<body style ="background-color :#99CCFF" bgcolor="#33ccff">
+    <form id="form1" runat="server">
+    <div style="margin: 0px">
+        <table align="center"  class="style1">
+            <tr>
+                <td bgcolor="#0099CC">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click">SignOut</asp:LinkButton>
+                    <br />
+                    <asp:Panel ID="Panel1" runat="server" BackColor="#003366" Height="39px" 
+                        Width="264px">
+                        <span class="style3">Auction On Assets</span>
+                    </asp:Panel>
+                    <cc1:DropShadowExtender ID="Panel1_DropShadowExtender" runat="server" 
+                        Enabled="True" Opacity="0.3" Rounded="True" TargetControlID="Panel1">
+                    </cc1:DropShadowExtender>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#006699" class="style4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="btn_viewbids" 
+                        runat="server" ForeColor="#CCFFFF" onclick="btn_viewbids_Click">View Bids</asp:LinkButton>
+&nbsp;&nbsp;
+                    <asp:LinkButton ID="btn_newbid" runat="server" ForeColor="#CCFFFF" 
+                        onclick="btn_newbid_Click">New Bid</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="btn_approve" runat="server" ForeColor="#CCFFFF" 
+                        onclick="btn_approve_Click">Approve</asp:LinkButton>
+&nbsp;
+                    <asp:LinkButton ID="btn_members" runat="server" ForeColor="#CCFFFF" 
+                        onclick="btn_members_Click">Members</asp:LinkButton>
+&nbsp;&nbsp;<asp:LinkButton ID="btn_changepwd" runat="server" ForeColor="#CCFFFF" 
+                        onclick="btn_changepwd_Click">Change 
+                    Password</asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            </tr>
+            <tr>
+                <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style2">
+                <center >coryrights@kresttechnolagies.com</center>
+                    </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

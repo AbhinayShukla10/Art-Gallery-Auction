@@ -1,0 +1,137 @@
+USE [xys] 
+GO
+/****** Object:  Table [dbo].[members]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[members](
+	[MemberName] [varchar](30) NULL,
+	[UserName] [varchar](20) NOT NULL,
+	[Password] [varchar](30) NULL,
+	[DateOfBirth] [smalldatetime] NULL,
+	[Email] [varchar](50) NULL,
+	[Mobile] [varchar](12) NULL,
+	[Designation] [varchar](30) NULL,
+	[Status] [char](1) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[tbl_cat]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[tbl_cat](
+	[CatagoryName] [varchar](20) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CatagoryName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[admin]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[admin](
+	[UserName] [varchar](20) NOT NULL,
+	[Password] [varchar](20) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ulogin]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ulogin](
+	[UserName] [varchar](20) NULL,
+	[Password] [varchar](20) NULL,
+	[UserState] [varchar](20) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[tbl_bid]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[tbl_bid](
+	[BidId] [varchar](10) NOT NULL,
+	[CatagoryName] [varchar](20) NULL,
+	[BidImage] [varchar](50) NULL,
+	[BidCost] [money] NULL,
+	[BidStartDate] [smalldatetime] NULL,
+	[BidEndDate] [smalldatetime] NULL,
+	[BidState] [varchar](10) NULL,
+	[BidInfo] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[BidId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[memberbids]    Script Date: 12/08/2016 12:05:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[memberbids](
+	[BidId] [varchar](10) NULL,
+	[MemberId] [varchar](20) NULL,
+	[GivenCost] [money] NULL,
+	[BidDate] [smalldatetime] NULL,
+	[BidStatus] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  ForeignKey [FK__memberbid__BidId__1367E606]    Script Date: 12/08/2016 12:05:23 ******/
+ALTER TABLE [dbo].[memberbids]  WITH CHECK ADD  CONSTRAINT [FK__memberbid__BidId__1367E606] FOREIGN KEY([BidId])
+REFERENCES [dbo].[tbl_bid] ([BidId])
+GO
+ALTER TABLE [dbo].[memberbids] CHECK CONSTRAINT [FK__memberbid__BidId__1367E606]
+GO
+/****** Object:  ForeignKey [FK__memberbid__Membe__145C0A3F]    Script Date: 12/08/2016 12:05:23 ******/
+ALTER TABLE [dbo].[memberbids]  WITH CHECK ADD  CONSTRAINT [FK__memberbid__Membe__145C0A3F] FOREIGN KEY([MemberId])
+REFERENCES [dbo].[members] ([UserName])
+GO
+ALTER TABLE [dbo].[memberbids] CHECK CONSTRAINT [FK__memberbid__Membe__145C0A3F]
+GO
+/****** Object:  ForeignKey [FK__tbl_bid__Catagor__7F60ED59]    Script Date: 12/08/2016 12:05:23 ******/
+ALTER TABLE [dbo].[tbl_bid]  WITH CHECK ADD FOREIGN KEY([CatagoryName])
+REFERENCES [dbo].[tbl_cat] ([CatagoryName])
+GO
+/****** Object:  ForeignKey [FK__ulogin__UserName__08EA5793]    Script Date: 12/08/2016 12:05:23 ******/
+ALTER TABLE [dbo].[ulogin]  WITH CHECK ADD FOREIGN KEY([UserName])
+REFERENCES [dbo].[members] ([UserName])
+GO

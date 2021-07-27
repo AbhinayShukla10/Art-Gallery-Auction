@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HomePage.master.cs" Inherits="HomePage" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+            width: 95%;
+        }
+    </style>
+</head>
+<body style ="background-color :#99CCFF" bgcolor="#33ccff">
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" class="style1">
+            <tr>
+                <td bgcolor="#0099CC">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel1" runat="server" BackColor="#006699" Height="55px" 
+                        Width="331px">
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="35pt" 
+                        Text="Auction on Assets" Font-Italic="True" Font-Names="Centaur" 
+                        ForeColor="White"></asp:Label>
+                    </asp:Panel>
+                    <cc1:DropShadowExtender ID="Panel1_DropShadowExtender" runat="server" 
+                        Enabled="True" Opacity="5" Rounded="True" TargetControlID="Panel1">
+                    </cc1:DropShadowExtender>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#CCCCCC">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="LinkButton3" runat="server" Font-Bold="True" 
+                        ForeColor="#333333" onclick="LinkButton3_Click">Home</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton4" runat="server" Font-Bold="True" 
+                        ForeColor="Black" onclick="LinkButton4_Click">Login</asp:LinkButton>
+                    &nbsp;&nbsp;
+                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True" 
+                        ForeColor="#333333" onclick="LinkButton2_Click">ContactUs</asp:LinkButton>
+&nbsp;&nbsp;&nbsp; </td>
+            </tr>
+            <tr>
+                <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+           
+        
+            <p>
+            </p>
+        
+           
+        
+        </asp:ContentPlaceHolder>
+                </td>
+                
+            </tr>
+        </table>
+        <td>
+                <center >copyrights@kresttechnology.com</center>
+                </td>
+    </div>
+    </form>
+</body>
+</html>

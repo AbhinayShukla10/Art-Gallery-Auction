@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>Images/art1.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+	<Ad>
+		<ImageUrl>Images/art2.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+	<Ad>
+		<ImageUrl>Images/art3.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+	<Ad>
+		<ImageUrl>Images/art4.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+	<Ad>
+		<ImageUrl>Images/art5.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+	<Ad>
+		<ImageUrl>Images/art6.jpg</ImageUrl>
+		<Height>160</Height>
+		<Width>220</Width>
+	</Ad>
+</Advertisements>
